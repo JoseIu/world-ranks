@@ -1,0 +1,24 @@
+$breakpoints: (
+  tablet: 640px,
+  laptop: 1024px,
+  desktop: 1440px,
+);
+
+@mixin responsive($key) {
+  @media screen and (min-width: map-get($breakpoints,$key)) {
+    @content;
+  }
+}
+@mixin flexible($just, $align, $gap) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  gap: $gap;
+  @content;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
