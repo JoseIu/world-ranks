@@ -1,0 +1,67 @@
+@use '../../scss/tools/mixins.scss' as *;
+
+.hero {
+  background-image: url(./images/hero-image-wr.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include flexible(center, center, 0);
+  min-height: 40dvh;
+  &__logo {
+    max-width: 15em;
+  }
+}
+.container {
+  padding: 2em;
+}
+.header {
+  @include flexible(space-between, center, 2.4em) {
+    flex-wrap: wrap;
+  }
+  &__count {
+    flex-grow: 999;
+    min-width: 20em;
+  }
+  &__search {
+    padding: 0.8em 1em;
+    background-color: var(--bg-color-light);
+    color: var(--gray-color);
+    border-radius: 0.4em;
+    flex-grow: 1;
+    flex-basis: 24em;
+    @include flexible(none, center, 0.8em);
+    &:focus-within {
+      outline: 2px solid var(--gray-color);
+    }
+    &::placeholder {
+      color: var(--gray-color);
+    }
+  }
+  &__icon {
+    width: 1.5em;
+  }
+  &__input:focus-visible {
+    outline: none;
+  }
+}
+
+.sort {
+  @include flexible(none, none, 1em) {
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+  }
+  &__select {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    outline: 1px solid var(--gray-color);
+
+    &:focus-visible {
+      outline: 2px solid var(--gray-color);
+    }
+  }
+}
