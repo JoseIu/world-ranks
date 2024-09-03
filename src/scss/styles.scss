@@ -1,0 +1,8 @@
+@use './generic/_reset.scss';
+@use './tools/mixins.scss';
+
+.wrapper {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
