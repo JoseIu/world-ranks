@@ -16,7 +16,7 @@
   padding: 2em;
 }
 .header {
-  @include flexible(space-between, center, 2.4em) {
+  @include flexible(space-between, center, 1em) {
     flex-wrap: wrap;
   }
   &__count {
@@ -41,8 +41,16 @@
   &__icon {
     width: 1.5em;
   }
-  &__input:focus-visible {
-    outline: none;
+  &__input {
+    width: 100%;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+.filters {
+  @include flexible(none, none, 2em) {
+    flex-direction: column;
   }
 }
 
@@ -62,6 +70,43 @@
 
     &:focus-visible {
       outline: 2px solid var(--gray-color);
+    }
+  }
+}
+
+.region {
+  @include flexible(none, center, 1em) {
+    flex-wrap: wrap;
+  }
+  &__list {
+    padding: 0.5em 1em;
+    border-radius: 0.8em;
+    background-color: var(--bg-color-light);
+  }
+}
+.status {
+  @include flexible(none, center, 1em);
+  &__input {
+    border: 2px solid var(--gray-color);
+    border-radius: 0.2em;
+    width: 1.5em;
+    height: 1.5em;
+    appearance: none;
+    position: relative;
+    &:checked {
+      background-color: var(--blue-color);
+      &::after {
+        content: '';
+        display: block;
+        width: 1.5em;
+        height: 1.5em;
+        background-image: url(./images/Done_round.svg);
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        left: -0.1em;
+        border-radius: 50%;
+      }
     }
   }
 }

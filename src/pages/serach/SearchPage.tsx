@@ -23,7 +23,7 @@ export const SearchPage = () => {
           </div>
         </header>
 
-        <aside>
+        <aside className="filters">
           <div className="sort">
             <label className="sort__label" htmlFor="sort-by">
               Sort by
@@ -34,23 +34,23 @@ export const SearchPage = () => {
           </div>
           <div className="sort">
             <span>Region</span>
-            <ul>
-              <li>Americas</li>
-              <li>Antartic</li>
-              <li>Africa</li>
-              <li>Asia</li>
-              <li>Europe</li>
-              <li>Oceania</li>
+            <ul className="region">
+              <li className="region__list">Americas</li>
+              <li className="region__list">Antartic</li>
+              <li className="region__list">Africa</li>
+              <li className="region__list">Asia</li>
+              <li className="region__list">Europe</li>
+              <li className="region__list">Oceania</li>
             </ul>
           </div>
-          <div>
+          <div className="sort">
             <span>Status</span>
-            <label htmlFor="member">
-              <input type="checkbox" name="member" id="member" />
+            <label className="status" htmlFor="member">
+              <input className="status__input" type="checkbox" name="member" id="member" />
               Member of the United Nations
             </label>
-            <label htmlFor="independent">
-              <input type="checkbox" name="independent" id="independent" />
+            <label className="status" htmlFor="independent">
+              <input className="status__input" type="checkbox" name="independent" id="independent" />
               Independent
             </label>
           </div>
